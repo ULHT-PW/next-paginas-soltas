@@ -3,9 +3,9 @@
 import { useEffect } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from './Mapa.module.css';
+import styles2 from '/app/globals.css'
 import useSWR from 'swr';
 import axios from 'axios';
 
@@ -16,10 +16,8 @@ const Mapa = () => {
 
   // axios parses the response directly as JSON
   const fetcher = (url) => axios.get(url).then(res => res.data)
-  const { data, error } = useSWR(`/api/gira/availability`, fetcher)
- 
-  const { dataHello, errorHello } = useSWR(`/api/hello`, fetcher)
-  const { dataExample, errorExample } = useSWR(`/api/example`, fetcher)
+  const { data, error } = useSWR(`/api/station/availability`, fetcher)
+
 
   useEffect(() => {
     if (data !== undefined) {
@@ -65,7 +63,7 @@ const Mapa = () => {
         // Add bike lanes data
         map.addSource('bike-lanes', {
           'type': 'geojson',
-          'data': data
+          'data': data.data
         });
 
         // Add bike lane points as symbols with bicycle icon
@@ -142,7 +140,7 @@ const Mapa = () => {
 
   return (
     <div>
-      <h1>Bicicletas Gira</h1>
+      <h1>Bicis</h1>
 
       <p>Mapa com as docas Gira em Lisboa.</p>
       <p> Procure no mapa as docas 🚲, clique e veja quantas existem disponíveis!</p>

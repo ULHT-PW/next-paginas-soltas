@@ -14,7 +14,8 @@ export default function Temperatura() {
   // not working?!
 
   const fetcher = (url) => axios.get(url).then(res => res.data)
-  const { weatherData, error } = useSWR(`/api/ipma/lisboa`, fetcher)
+  const { data: weatherData, error } = useSWR(`/api/ipma`, fetcher)
+  console.log(weatherData)
 
   if (error) return <div>Error loading data</div>;
   if (!weatherData) return <div>Loading weatherData...</div>;
@@ -35,7 +36,7 @@ export default function Temperatura() {
     <>
       <h2>Tempo</h2>
       <p>Informação extraída da <a href="https://api.ipma.pt/" target="_blank">API do IPMA</a>.</p>
-      {weatherData.data.slice(0, 3).map(
+      {weatherData.data.data.slice(0, 3).map(
         (forecast, index) =>
           <TemperaturaDia
             key={index}

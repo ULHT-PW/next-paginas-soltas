@@ -6,10 +6,9 @@ export default function Graphs() {
   return (
     <div>
       <h1>Gráficos</h1>
+      <LineGraph />
       <br></br>
       <BarGraph />
-      <br></br>
-      <LineGraph />
     </div>
   )
 }

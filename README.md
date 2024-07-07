@@ -1,7 +1,7 @@
 
 # Open issues
 
-Problems with IPMA API, has CORS limitations. `useSWR` is not working properly [here](https://github.com/ULHT-PW/next-paginas-soltas/blob/304eb67999c3e72ce16db09851dc5d76fe7b0dd2/components/Temperatura/Temperatura.js#L17)
+* CSS Layout changes when Gira is clicked
 
 
 # Paginas soltas, Next.js App
