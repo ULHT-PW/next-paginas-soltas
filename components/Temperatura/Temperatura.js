@@ -15,7 +15,6 @@ export default function Temperatura() {
 
   const fetcher = (url) => axios.get(url).then(res => res.data)
   const { data: weatherData, error } = useSWR(`/api/ipma`, fetcher)
-  console.log(weatherData)
 
   if (error) return <div>Error loading data</div>;
   if (!weatherData) return <div>Loading weatherData...</div>;

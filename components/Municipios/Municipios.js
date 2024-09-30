@@ -10,8 +10,6 @@ export default function Municipios() {
   const fetcher = (url) => axios.get(url).then(res => res.data.data)
   const { data: municipalities , error } = useSWR(`/api/municipalities`, fetcher);
   
-  console.log(municipalities);
-
   // Handle loading and error states
   if (error) return <div>Error loading data</div>;
   if (!municipalities) return <div>Loading...</div>;
