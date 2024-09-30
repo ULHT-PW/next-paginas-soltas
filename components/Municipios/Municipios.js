@@ -2,13 +2,15 @@
 
 import React from 'react';
 import useSWR from 'swr';
-
-// Define the fetcher function
-const fetcher = url => fetch(url).then(res => res.json());
+import axios from 'axios';
 
 export default function Municipios() {
+
   // Fetch data using SWR
-  const { data: municipalities, error } = useSWR('https://api.carrismetropolitana.pt/municipalities', fetcher);
+  const fetcher = (url) => axios.get(url).then(res => res.data.data)
+  const { data: municipalities , error } = useSWR(`/api/municipalities`, fetcher);
+  
+  console.log(municipalities);
 
   // Handle loading and error states
   if (error) return <div>Error loading data</div>;
