@@ -18,13 +18,13 @@ export default function Municipios() {
 
   return (
     <div>
-      <h2>Municípios</h2>
-      <p>Extraído do endpoint municipios da <a href="https://api.carrismetropolitana.pt" target="_blank">API da CarrisMetropolitana</a></p>
+      <h2>Municípios da Área Metropolitana de Lisboa (AML)</h2>
       <ul>
         {municipalities.map(municipality => (
           <li key={municipality.id}>{municipality.name}</li>
         ))}
       </ul>
+      <p>Extraído do endpoint municipios da <a href="https://api.carrismetropolitana.pt" target="_blank">API da CarrisMetropolitana</a></p>
     </div>
   );
 }
