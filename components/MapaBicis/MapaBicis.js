@@ -143,7 +143,7 @@ const Mapa = () => {
       <h1>Bicis</h1>
 
       <p>Mapa com as docas Gira em Lisboa.</p>
-      <p> Procure no mapa as docas 🚲, clique e veja quantas existem disponíveis!</p>
+      <p> Procure no mapa as docas 🚲, clique e veja quantas existem disponíveis neste preciso instante! São dados continuamente atualizados.</p>
       {error && <div>Loading bikeLanesData...</div>}
       {!error && <div id="map" className={styles.map}></div>}
       
