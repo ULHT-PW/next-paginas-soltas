@@ -8,6 +8,7 @@ import { FiMapPin } from "react-icons/fi";
 import { TiWeatherPartlySunny } from "react-icons/ti";
 import { FaCity } from "react-icons/fa";
 import { IoHomeSharp } from "react-icons/io5";
+import { GiWaterDrop } from "react-icons/gi";
 
 export default function Header() {
   return (
@@ -41,6 +42,10 @@ export default function Header() {
         <Link href="/calendar" className={styles.link}>
           <BsCalendar2MonthFill className={styles.icon} />
           <span className={styles.linkText}>Tarefas</span>
+        </Link>
+        <Link href="/regas" className={styles.link}>
+          <GiWaterDrop className={styles.icon} />
+          <span className={styles.linkText}>Regas</span>
         </Link>
       </nav>
     </header>
