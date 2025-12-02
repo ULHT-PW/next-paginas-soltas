@@ -43,10 +43,6 @@ export default function Header() {
           <BsCalendar2MonthFill className={styles.icon} />
           <span className={styles.linkText}>Tarefas</span>
         </Link>
-        <Link href="/regas" className={styles.link}>
-          <GiWaterDrop className={styles.icon} />
-          <span className={styles.linkText}>Regas</span>
-        </Link>
       </nav>
     </header>
   );
